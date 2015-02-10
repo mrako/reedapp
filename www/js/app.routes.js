@@ -23,16 +23,27 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('app.todos.index', {
         url: '',
         templateUrl: 'templates/todos.tpl.html',
-        controller: 'TodosCtrl'
+        controller: 'TodosCtrl',
+        resolve: {
+            todos: function(TodosService) {
+                return TodosService.getTodos()
+            }
+        }
+    });
+
+    $stateProvider.state('app.todos.new', {
+        url: '/new',
+        templateUrl: 'templates/new.tpl.html',
+        controller: 'NewTodoCtrl'
     });
 
     $stateProvider.state('app.todos.detail', {
-        url: '/:todo',
+        url: '/:todoId',
         templateUrl: 'templates/todo.tpl.html',
         controller: 'TodoCtrl',
         resolve: {
             todo: function($stateParams, TodosService) {
-                return TodosService.getTodo($stateParams.todo)
+                return TodosService.getTodo($stateParams.todoId)
             }
         }
     });

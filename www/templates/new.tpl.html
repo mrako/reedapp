@@ -1,0 +1,16 @@
+<ion-view title="Todos">
+  <ion-content>
+    <form ng-submit="createTask(todo)">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="What do you need to do?" ng-model="todo.title">
+        </label>
+      </div>
+      <div class="padding">
+        <button type="submit" class="button button-block button-positive">Create Task</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
+
+

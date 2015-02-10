@@ -1,0 +1,14 @@
+.pane {
+  background-color: #f7f8fc;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.card {
+  box-shadow: none;
+  &.red {
+    border-top: 3px #f00 solid
+  }
+}

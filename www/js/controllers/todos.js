@@ -1,3 +1,3 @@
-app.controller('TodosCtrl', function($scope, TodosService) {
-  $scope.todos = TodosService.todos
-})
+app.controller('TodosCtrl', function($scope, todos) {
+  $scope.todos = todos;
+});
