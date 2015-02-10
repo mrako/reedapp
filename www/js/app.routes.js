@@ -1,40 +1,40 @@
-(function() {
-    'use strict';
+'use strict';
 
-  angular
-    .module('reedapp')
-    .config(function ($stateProvider, $urlRouterProvider) {
-            $stateProvider.state('app.index', {
-                url: '/index',
-                views: {
-                    'main': {
-                        templateUrl: 'templates/index.tpl.htm',
-                        controller: 'index'
-                    }
-                }
-            });
+var app = angular.module('reedapp', ['ionic']);
 
-            $stateProvider.state('app.create', {
-                url: '/create',
-                views: {
-                    'main': {
-                        templateUrl: 'templates/createReed.tpl.htm',
-                        controller: 'createReed'
-                    }
-                }
-            });
+app.config(function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/todos');
 
-            $stateProvider.state('app.edit', {
-                url: '/edit',
-                views: {
-                    'main': {
-                        templateUrl: 'templates/editReed.tpl.htm',
-                        controller: 'editReed'
-                    }
-                }
-            });
+    $stateProvider.state('app', {
+        abstract: true,
+        templateUrl: 'templates/main.tpl.html'
+    });
 
-            //** Default
-            $urlRouterProvider.otherwise('/app/index');
-        });
-})();
+    $stateProvider.state('app.todos', {
+        abstract: true,
+        url: '/todos',
+        views: {
+            todos: {
+                template: '<ion-nav-view></ion-nav-view>'
+            }
+        }
+    });
+
+    $stateProvider.state('app.todos.index', {
+        url: '',
+        templateUrl: 'templates/todos.tpl.html',
+        controller: 'TodosCtrl'
+    });
+
+    $stateProvider.state('app.todos.detail', {
+        url: '/:todo',
+        templateUrl: 'templates/todo.tpl.html',
+        controller: 'TodoCtrl',
+        resolve: {
+            todo: function($stateParams, TodosService) {
+                return TodosService.getTodo($stateParams.todo)
+            }
+        }
+    });
+
+});
