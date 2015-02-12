@@ -3,47 +3,47 @@
 var app = angular.module('reedapp', ['ionic']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/todos');
+    $urlRouterProvider.otherwise('/reeds');
 
     $stateProvider.state('app', {
         abstract: true,
         templateUrl: 'templates/main.tpl.html'
     });
 
-    $stateProvider.state('app.todos', {
+    $stateProvider.state('app.reeds', {
         abstract: true,
-        url: '/todos',
+        url: '/reeds',
         views: {
-            todos: {
+            reeds: {
                 template: '<ion-nav-view></ion-nav-view>'
             }
         }
     });
 
-    $stateProvider.state('app.todos.index', {
+    $stateProvider.state('app.reeds.index', {
         url: '',
-        templateUrl: 'templates/todos.tpl.html',
-        controller: 'TodosCtrl',
+        templateUrl: 'templates/reeds.tpl.html',
+        controller: 'ReedsCtrl',
         resolve: {
-            todos: function(TodosService) {
-                return TodosService.getTodos()
+            reeds: function(reedsService) {
+                return reedsService.list();
             }
         }
     });
 
-    $stateProvider.state('app.todos.new', {
+    $stateProvider.state('app.reeds.new', {
         url: '/new',
         templateUrl: 'templates/new.tpl.html',
-        controller: 'NewTodoCtrl'
+        controller: 'NewReedCtrl'
     });
 
-    $stateProvider.state('app.todos.detail', {
-        url: '/:todoId',
-        templateUrl: 'templates/todo.tpl.html',
-        controller: 'TodoCtrl',
+    $stateProvider.state('app.reeds.detail', {
+        url: '/:reedId',
+        templateUrl: 'templates/reed.tpl.html',
+        controller: 'ReedCtrl',
         resolve: {
-            todo: function($stateParams, TodosService) {
-                return TodosService.getTodo($stateParams.todoId)
+            reed: function($stateParams, reedsService) {
+                return reedsService.get($stateParams.reedId)
             }
         }
     });

@@ -1,16 +1,85 @@
-<ion-view title="Todos">
-  <ion-content>
-    <form ng-submit="createTask(todo)">
-      <div class="list">
-        <label class="item item-input">
-          <input type="text" placeholder="What do you need to do?" ng-model="todo.title">
-        </label>
-      </div>
-      <div class="padding">
-        <button type="submit" class="button button-block button-positive">Create Task</button>
-      </div>
-    </form>
-  </ion-content>
+<ion-view title="New reed">
+    <ion-content>
+        <form ng-submit="create()">
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Code</span>
+                    <input type="text" ng-model="reed.code" required>
+                </label>
+            </div>
+
+            <div class="list list-inset">
+                <label class="item item-input item-select">
+                    <span class="input-label">Instrument</span>
+                    <select ng-model="reed.instrument" ng-change="updateCode()" required>
+                      <option ng-repeat="instrument in instruments" value="{{instrument.code}}">{{instrument.name}}</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="list list-inset">
+                <label class="item item-input item-select">
+                    <span class="input-label">Color</span>
+                    <select ng-model="reed.color" required>
+                      <option ng-repeat="color in colors" value="{{color}}">{{color}}</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Staple name</span>
+                    <input type="text" ng-model="reed.staple.name">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Staple length</span>
+                    <input type="text" ng-model="reed.staple.length">
+                </label>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Cane name</span>
+                    <input type="text" ng-model="reed.cane.name">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Cane gouge</span>
+                    <input type="text" ng-model="reed.cane.gouge">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Cane shape</span>
+                    <input type="text" ng-model="reed.cane.shape">
+                </label>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Binding date</span>
+                    <input type="date" ng-model="reed.binding_date">
+                </label>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Scraping date</span>
+                    <input type="date" ng-model="reed.scraping_date">
+                </label>
+                <label class="item item-input item-select">
+                    <span class="input-label">Scraping type</span>
+                    <select ng-model="reed.scraping_type">
+                        <option selected>Profiled</option>
+                        <option>Handmade</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <textarea ng-model="reed.notes" placeholder="Notes" rows="4"></textarea>
+                </label>
+            </div>
+
+            <div class="padding">
+                <button type="submit" class="button button-block button-positive">Create</button>
+            </div>
+        </form>
+    </ion-content>
 </ion-view>
-
-

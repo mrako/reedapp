@@ -1,0 +1,29 @@
+<ion-view title="Reeds">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon ion-plus" ui-sref="app.reeds.new"></button>
+  </ion-nav-buttons>
+
+  <ion-content>
+
+    <div id="search-bar">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper" id="search-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Search" ng-model="query" ng-change="search()">
+        </label>
+      </div>
+    </div>
+
+    <div ng-repeat="reed in reeds | filter: query" class="card {{ reed.color }}" ui-sref="app.reeds.detail({reedId: reed._id})">
+      <div class="item item-text-wrap">
+        <span class="instrument">{{ reed.instrument }}</span>
+        <h2>{{ reed.code }}</h2>
+        <ul class="info">
+          <li>STAPLE: {{ ([reed.staple.name, reed.staple.length] | filter:!null).join(', ') }}</li>
+          <li>CANE: {{ ([reed.cane.name, reed.cane.gouge, reed.cane.shape] | filter:!null).join(', ') }}</li>
+          <li>DATES: {{ ([reed.binding_date,  reed.scraping_date ] | filter:!null).join(', ') }}</li>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

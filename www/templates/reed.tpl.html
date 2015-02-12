@@ -1,0 +1,118 @@
+<ion-view title="{{ reed.code }} ({{ reed.color }})">
+    <ion-content>
+        <form ng-submit="create()">
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Instrument</span>
+                    {{instrument.name}}
+                </label>
+            </div>
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Staple name</span>
+                    <h2>{{ reed.staple.name }}</h2>
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Staple length</span>
+                    <h2>{{ reed.staple.length }}</h2>
+                </label>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Cane name</span>
+                    <h2>{{ reed.cane.name }}</h2>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Cane gouge</span>
+                    <h2>{{ reed.cane.gouge }}</h2>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Cane shape</span>
+                    <h2>{{ reed.cane.shape }}</h2>
+                </label>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Binding date</span>
+                    <h2>{{ reed.binding_date }}</h2>
+                </label>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Scraping date</span>
+                    <h2>{{ reed.scraping_date }}</h2>
+                </label>
+                <label class="item item-input item-select">
+                    <span class="input-label">Scraping type</span>
+                    <h2>{{ reed.scraping_type }}</h2>
+                </label>
+            </div>
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <textarea ng-change="update()" ng-model="reed.notes" placeholder="Notes" rows="4"></textarea>
+                </label>
+            </div>
+
+            <div class="list list-inset">
+                <div class="item range range-positive">
+                    <span class="input-label">Sound ({{ reed.ratings.sound }})</span>
+                    <input type="range" ng-change="update()" ng-model="reed.ratings.sound" min="0" max="10" value="5">
+                </div>
+                <div class="item range range-positive">
+                    <span class="input-label">Intonation ({{ reed.ratings.intonation }})</span>
+                    <input type="range" ng-change="update()" ng-model="reed.ratings.intonation" min="0" max="10" value="5">
+                </div>
+                <div class="item range range-positive">
+                    <span class="input-label">Pitch ({{ reed.ratings.pitch }})</span>
+                    <input type="range" ng-change="update()" ng-model="reed.ratings.pitch" min="0" max="10" value="5">
+                </div>
+                <div class="item range range-positive">
+                    <span class="input-label">Response ({{ reed.ratings.response }})</span>
+                    <input type="range" ng-change="update()" ng-model="reed.ratings.response" min="0" max="10" value="5">
+                </div>
+                <div class="item range range-positive">
+                    <span class="input-label">Stability ({{ reed.ratings.stability }})</span>
+                    <input type="range" ng-change="update()" ng-model="reed.ratings.stability" min="0" max="10" value="5">
+                </div>
+                <div class="item range range-positive">
+                  <span class="input-label">Aperture ({{ reed.ratings.aperture }})</span>
+                    <span class="guide">Open</span>
+                    
+                    <input type="range" ng-change="update()" ng-model="reed.ratings.aperture" min="0" max="10" value="5">
+                    <span class="guide align-right">Closed</span>
+                </div>
+            </div>
+
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Diameter</span>
+                    <input type="text" ng-change="update()" ng-model="reed.cane.diameter">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Hardness</span>
+                    <input type="text" ng-change="update()" ng-model="reed.cane.hardness">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Density</span>
+                    <input type="text" ng-change="update()" ng-model="reed.cane.density">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Elasticity</span>
+                    <input type="text" ng-change="update()" ng-model="reed.cane.elasticity">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Age</span>
+                    <input type="text" ng-change="update()" ng-model="reed.cane.age">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Ratio</span>
+                    <input type="text" ng-change="update()" ng-model="reed.cane.ratio">
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
