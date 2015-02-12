@@ -1,11 +1,13 @@
 <ion-view title="{{ reed.code }} ({{ reed.color }})">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-trash-b" ng-click="delete()"></button>
+    </ion-nav-buttons>
     <ion-content>
         <form ng-submit="create()">
 
             <div class="list list-inset">
                 <label class="item item-input">
-                    <span class="input-label">Instrument</span>
-                    {{instrument.name}}
+                    <span class="input-label">Instrument</span> {{instrument.name}}
                 </label>
             </div>
 
@@ -59,31 +61,29 @@
 
             <div class="list list-inset">
                 <div class="item range range-positive">
-                    <span class="input-label">Sound ({{ reed.ratings.sound }})</span>
+                    <p>Sound ({{ reed.ratings.sound }})</p>
                     <input type="range" ng-change="update()" ng-model="reed.ratings.sound" min="0" max="10" value="5">
                 </div>
                 <div class="item range range-positive">
-                    <span class="input-label">Intonation ({{ reed.ratings.intonation }})</span>
+                    <p>Intonation ({{ reed.ratings.intonation }})</p>
                     <input type="range" ng-change="update()" ng-model="reed.ratings.intonation" min="0" max="10" value="5">
                 </div>
                 <div class="item range range-positive">
-                    <span class="input-label">Pitch ({{ reed.ratings.pitch }})</span>
+                    <p>Pitch ({{ reed.ratings.pitch }})</p>
                     <input type="range" ng-change="update()" ng-model="reed.ratings.pitch" min="0" max="10" value="5">
                 </div>
                 <div class="item range range-positive">
-                    <span class="input-label">Response ({{ reed.ratings.response }})</span>
+                    <p>Response ({{ reed.ratings.response }})</p>
                     <input type="range" ng-change="update()" ng-model="reed.ratings.response" min="0" max="10" value="5">
                 </div>
                 <div class="item range range-positive">
-                    <span class="input-label">Stability ({{ reed.ratings.stability }})</span>
+                    <p>Stability ({{ reed.ratings.stability }})</p>
                     <input type="range" ng-change="update()" ng-model="reed.ratings.stability" min="0" max="10" value="5">
                 </div>
                 <div class="item range range-positive">
-                  <span class="input-label">Aperture ({{ reed.ratings.aperture }})</span>
-                    <span class="guide">Open</span>
-                    
+                    <p>Open</p>
                     <input type="range" ng-change="update()" ng-model="reed.ratings.aperture" min="0" max="10" value="5">
-                    <span class="guide align-right">Closed</span>
+                    <p>Closed</p>
                 </div>
             </div>
 

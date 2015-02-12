@@ -19,9 +19,9 @@
         <span class="instrument">{{ reed.instrument }}</span>
         <h2>{{ reed.code }}</h2>
         <ul class="info">
-          <li>STAPLE: {{ ([reed.staple.name, reed.staple.length] | filter:!null).join(', ') }}</li>
-          <li>CANE: {{ ([reed.cane.name, reed.cane.gouge, reed.cane.shape] | filter:!null).join(', ') }}</li>
-          <li>DATES: {{ ([reed.binding_date,  reed.scraping_date ] | filter:!null).join(', ') }}</li>
+          <li>STAPLE: {{ [reed.staple.name, reed.staple.length].join(', ') }}</li>
+          <li>CANE: {{ [reed.cane.name, reed.cane.gouge, reed.cane.shape].join(', ') }}</li>
+          <li>DATES: {{ [reed.binding_date,  reed.scraping_date ].join(', ') }}</li>
         </ul>
       </div>
     </div>
