@@ -12,7 +12,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state('app.reeds', {
         abstract: true,
-        cache: false,
         url: '/reeds',
         views: {
             reeds: {
@@ -25,6 +24,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         url: '',
         templateUrl: 'templates/reeds.tpl.html',
         controller: 'ReedsCtrl',
+        cache: false,
         resolve: {
             reeds: function(reedsService) {
                 return reedsService.list();
@@ -35,13 +35,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('app.reeds.new', {
         url: '/new',
         templateUrl: 'templates/new.tpl.html',
-        controller: 'NewReedCtrl'
+        controller: 'NewReedCtrl',
+        cache: false
     });
 
     $stateProvider.state('app.reeds.detail', {
         url: '/:reedId',
         templateUrl: 'templates/reed.tpl.html',
         controller: 'ReedCtrl',
+        cache: false,
         resolve: {
             reed: function($stateParams, reedsService) {
                 return reedsService.get($stateParams.reedId)
