@@ -31,9 +31,7 @@ app.controller('NewReedCtrl', function($scope, $state, reedsService) {
 
     $scope.create = function() {
         reedsService.create($scope.reed).success(function(data) {
-            $state.go('app.reeds.index', {}, {
-                reload: true, inherit: true, notify: true
-            });
+            $state.go('app.reeds.index');
         });
 
     };

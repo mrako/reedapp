@@ -12,6 +12,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider.state('app.reeds', {
         abstract: true,
+        cache: false,
         url: '/reeds',
         views: {
             reeds: {

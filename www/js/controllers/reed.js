@@ -19,9 +19,7 @@ app.controller('ReedCtrl', function($scope, $state, $ionicPopup, $timeout, reed,
         confirmPopup.then(function(res) {
             if (res) {
                 reedsService.delete($scope.reed._id).success(function() {
-                    $state.go('app.reeds.index', {}, {
-                        reload: true
-                    });
+                    $state.go('app.reeds.index');
                 });
             }
         });
