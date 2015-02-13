@@ -2,8 +2,12 @@ var morgan  = require('morgan');
 var express = require('express');
 var app = express();
 
+var cors = require('./cors');
+
 var port = process.env.PORT || 5000;
 
+
+app.use(cors);
 app.use(morgan('dev', {format: 'dev', immediate: true}));
 app.use(express.static(__dirname + '/www'));
 
