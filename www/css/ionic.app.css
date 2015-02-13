@@ -7024,7 +7024,11 @@ a.button {
 .card {
   box-shadow: none; }
   .card.red {
-    border-left: 3px #f00 solid; }
+    border-left: 3px #ef4e3a solid; }
+  .card.blue {
+    border-left: 3px #387ef5 solid; }
+  .card.lilac {
+    border-left: 3px #886aea solid; }
 
 .guide {
   width: 7%;

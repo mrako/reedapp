@@ -9,7 +9,13 @@
 .card {
   box-shadow: none;
   &.red {
-    border-left: 3px #f00 solid
+    border-left: 3px #ef4e3a solid;
+  }
+  &.blue {
+    border-left: 3px #387ef5 solid;
+  }
+  &.lilac {
+    border-left: 3px #886aea solid;
   }
 }
 

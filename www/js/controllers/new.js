@@ -13,7 +13,7 @@ app.controller('NewReedCtrl', function($scope, $state, reedsService) {
         "code": "B"
     }];
 
-    $scope.colors = ["red", "blue", "gold"];
+    $scope.colors = ["red", "blue", "lilac"];
 
     $scope.reed = {
         code: "O",
