@@ -1,7 +1,7 @@
 'use strict';
 
 app.service('reedsService', function($q, $http) {
-    var apiHost = 'http://localhost:8888/api';
+    var apiHost = 'https://reedapp-server.herokuapp.com/api';
 
     return {
         list: function() {

@@ -1,7 +1,7 @@
 'use strict';
 
 app.service('loginService', function($http) {
-  var apiHost = 'http://localhost:8888';
+  var apiHost = 'https://reedapp-server.herokuapp.com';
 
   function changeUser(user) {
     angular.extend(currentUser, user);
