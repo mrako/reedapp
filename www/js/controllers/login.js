@@ -1,5 +1,5 @@
 app.controller('LoginCtrl', function($rootScope, $scope, $state, $http, loginService) {
-  $scope.user = {email: "tomme", password: "kivikunu"}
+  $scope.user = {}
 
   $scope.signin = function() {
     loginService.signin($scope.user, function(res) {
