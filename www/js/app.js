@@ -112,6 +112,16 @@ app.run(function($rootScope, $state, $http, $ionicPlatform) {
       }
     }
   });
+
+      $stateProvider.state('app.datepicker', {
+      url: "/datepicker",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/datepicker.tpl.html",
+          controller: 'DatepickerCtrl'
+        }
+      }
+    });
 });
 
 /*
