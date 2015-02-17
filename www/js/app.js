@@ -13,7 +13,7 @@ angular.module("services.authInterceptor", [])
   });
 
 
-var app = angular.module('reedapp', ['ionic', 'services.authInterceptor']);
+var app = angular.module('reedapp', ['ionic', 'ion-autocomplete', 'services.authInterceptor']);
 
 
 app.config(function($httpProvider) {
@@ -112,16 +112,6 @@ app.run(function($rootScope, $state, $http, $ionicPlatform) {
       }
     }
   });
-
-      $stateProvider.state('app.datepicker', {
-      url: "/datepicker",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/datepicker.tpl.html",
-          controller: 'DatepickerCtrl'
-        }
-      }
-    });
 });
 
 /*

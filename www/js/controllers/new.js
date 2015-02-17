@@ -1,24 +1,27 @@
-app.controller('NewReedCtrl', function($scope, $state, reedsService) {
-  $scope.instruments = [{
-    "name": "Oboe",
-    "code": "O"
-  }, {
-    "name": "Cor Anglais",
-    "code": "A"
-  }, {
-    "name": "Oboe d’amore",
-    "code": "D"
-  }, {
-    "name": "Bass Oboe",
-    "code": "B"
-  }];
+app.controller('NewReedCtrl', function($scope, $state, $filter, reedsService) {
+  $scope.instruments = [ 'Oboe', 'Cor Anglais', 'Oboe d’amore', 'Bass Oboe'];
 
-  $scope.colors = ["red", "blue", "lilac"];
+  $scope.colors = ['Red', 'Marron', 'Light Blue', 'Blue', 'Dark Blue ', 'Green', 'Yellow', 'Tan', 'Pink ', 'Orange', 'Teal ', 'Purple', 'Lilac', 'Rainbow', 'Neon Rainbow'];
+
+  $scope.filterColors = function(query) {
+    if (query.length > 0) {
+      return $filter('filter')($scope.colors, query);
+    } else {
+      return $scope.colors;
+    }
+  };
+  $scope.filterInstruments = function(query) {
+    if (query.length > 0) {
+      return $filter('filter')($scope.instruments, query);
+    } else {
+      return $scope.instruments;
+    }
+  };
 
   $scope.reed = {
     code: "O",
-    instrument: "O",
-    color: "red",
+    instrument: "Oboe",
+    color: "Red",
     staple: {
       name: "",
       length: ""

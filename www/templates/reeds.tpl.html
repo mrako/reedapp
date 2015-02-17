@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div ng-repeat="reed in reeds | filter: query" class="card {{ reed.color }}" ui-sref="app.reeds.detail({reedId: reed._id})">
+    <div ng-repeat="reed in reeds | filter: query" class="card {{ reed.color | lowercase }}" ui-sref="app.reeds.detail({reedId: reed._id})">
       <div class="item item-text-wrap">
         <span class="instrument">{{ reed.instrument }}</span>
         <h2>{{ reed.code }}</h2>

@@ -10,20 +10,16 @@
             </div>
 
             <div class="list list-inset">
-                <label class="item item-input item-select">
+                <label class="item item-input">
                     <span class="input-label">Instrument</span>
-                    <select ng-model="reed.instrument" ng-change="updateCode()" required>
-                      <option ng-repeat="instrument in instruments" value="{{instrument.code}}">{{instrument.name}}</option>
-                    </select>
+                    <ion-autocomplete ng-model="reed.instrument" items-method="filterInstruments(query)" />
                 </label>
             </div>
 
             <div class="list list-inset">
-                <label class="item item-input item-select">
+                <label class="item item-input">
                     <span class="input-label">Color</span>
-                    <select ng-model="reed.color" required>
-                      <option ng-repeat="color in colors" value="{{color}}">{{color}}</option>
-                    </select>
+                    <ion-autocomplete ng-model="reed.color" items-method="filterColors(query)" />
                 </label>
             </div>
 

@@ -1,40 +1,71 @@
 .pane {
   background-color: #f7f8fc;
 }
-
 .done {
   text-decoration: line-through;
 }
-
 .card {
   box-shadow: none;
-  &.red {
+
+  .red {
     border-left: 3px #ef4e3a solid;
   }
-  &.blue {
+  .maroon {
+    border-left: 3px darkred solid;
+  }
+  .lightblue {
+    border-left: 3px #11c1f3 solid;
+  }
+  .blue {
     border-left: 3px #387ef5 solid;
   }
-  &.lilac {
-    border-left: 3px #886aea solid;
+  .darkblue {
+    border-left: 3px darkblue solid;
+  }
+  .green {
+    border-left: 3px #33cd5f solid;
+  }
+  .yellow {
+    border-left: 3px yellow solid;
+  }
+  .tan {
+    border-left: 3px #ef4e3a solid;
+  }
+  .pink {
+    border-left: 3px pink solid;
+  }
+  .orange {
+    border-left: 3px orange solid;
+  }
+  .teal {
+    border-left: 3px teal solid;
+  }
+  .purple {
+    border-left: 3px purple solid;
+  }
+  .lilac {
+    border-left: 3px darkviolet solid;
+  }
+  .rainbow {
+    border-left: 3px #ef4e3a solid;
+  }
+  .neonrainbow {
+    border-left: 3px #ef4e3a solid;
   }
 }
-
 .guide {
-  width:7%;
+  width: 7%;
   color: #999;
   font-size: 12px;
 }
-
 .align-right {
   text-align: right;
 }
-
 .instrument {
-  float:right;
+  float: right;
 }
-
 .info {
-  padding-top:15px;
+  padding-top: 15px;
   font-size: 12px;
   color: #666;
 }
