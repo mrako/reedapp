@@ -60,6 +60,33 @@
             </div>
 
             <div class="list list-inset">
+                <label class="item item-input">
+                    <span class="input-label">Diameter</span>
+                    <input type="text" ng-change="update()" ng-model="reed.cane.diameter">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Hardness</span>
+                    <input type="text" ng-change="update()" ng-model="reed.cane.hardness">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Density</span>
+                    <input type="text" ng-change="update()" ng-model="reed.cane.density">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Elasticity</span>
+                    <input type="text" ng-change="update()" ng-model="reed.cane.elasticity">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Age</span>
+                    <input type="text" ng-change="update()" ng-model="reed.cane.age">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Ratio</span>
+                    <input type="text" ng-change="update()" ng-model="reed.cane.ratio">
+                </label>
+            </div>
+
+            <div class="list list-inset">
                 <div class="item range range-positive">
                     <p>Sound ({{ reed.ratings.sound }})</p>
                     <input type="range" ng-change="update()" ng-model="reed.ratings.sound" min="0" max="10" value="5">
@@ -85,33 +112,6 @@
                     <input type="range" ng-change="update()" ng-model="reed.ratings.aperture" min="0" max="10" value="5">
                     <p>Closed</p>
                 </div>
-            </div>
-
-            <div class="list list-inset">
-                <label class="item item-input">
-                    <span class="input-label">Diameter</span>
-                    <input type="text" ng-change="update()" ng-model="reed.cane.diameter">
-                </label>
-                <label class="item item-input">
-                    <span class="input-label">Hardness</span>
-                    <input type="text" ng-change="update()" ng-model="reed.cane.hardness">
-                </label>
-                <label class="item item-input">
-                    <span class="input-label">Density</span>
-                    <input type="text" ng-change="update()" ng-model="reed.cane.density">
-                </label>
-                <label class="item item-input">
-                    <span class="input-label">Elasticity</span>
-                    <input type="text" ng-change="update()" ng-model="reed.cane.elasticity">
-                </label>
-                <label class="item item-input">
-                    <span class="input-label">Age</span>
-                    <input type="text" ng-change="update()" ng-model="reed.cane.age">
-                </label>
-                <label class="item item-input">
-                    <span class="input-label">Ratio</span>
-                    <input type="text" ng-change="update()" ng-model="reed.cane.ratio">
-                </label>
             </div>
         </form>
     </ion-content>

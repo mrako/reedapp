@@ -7023,12 +7023,36 @@ a.button {
 
 .card {
   box-shadow: none; }
-  .card.red {
+  .card .red {
     border-left: 3px #ef4e3a solid; }
-  .card.blue {
+  .card .maroon {
+    border-left: 3px darkred solid; }
+  .card .lightblue {
+    border-left: 3px #11c1f3 solid; }
+  .card .blue {
     border-left: 3px #387ef5 solid; }
-  .card.lilac {
-    border-left: 3px #886aea solid; }
+  .card .darkblue {
+    border-left: 3px darkblue solid; }
+  .card .green {
+    border-left: 3px #33cd5f solid; }
+  .card .yellow {
+    border-left: 3px yellow solid; }
+  .card .tan {
+    border-left: 3px #ef4e3a solid; }
+  .card .pink {
+    border-left: 3px pink solid; }
+  .card .orange {
+    border-left: 3px orange solid; }
+  .card .teal {
+    border-left: 3px teal solid; }
+  .card .purple {
+    border-left: 3px purple solid; }
+  .card .lilac {
+    border-left: 3px darkviolet solid; }
+  .card .rainbow {
+    border-left: 3px #ef4e3a solid; }
+  .card .neonrainbow {
+    border-left: 3px #ef4e3a solid; }
 
 .guide {
   width: 7%;
